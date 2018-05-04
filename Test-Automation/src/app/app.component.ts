@@ -8,11 +8,11 @@ import { TestService } from './test.service';
 })
 export class AppComponent {
   title = 'Test Automation';
-  url ='ApiURL';
+  webAppURL ='Web App URL';
   constructor(private testService: TestService){}
   setUrl()
   {
-    this.testService.setUrl(this.url);
+    this.testService.setUrl(this.webAppURL);
   }
     
 }

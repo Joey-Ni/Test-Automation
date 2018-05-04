@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 export class TestService
 {
     constructor(private http: Http){}
-    private url;
+    private url="";
+    private paramURL="";
   /*getTestResults method takes url as param, 
   passes it to $http.getmethod and maps response back as json object*/
     getTestResults(url)
@@ -16,10 +17,10 @@ export class TestService
         (response) => response.json()
       );
     }
-
-    setUrl(url: string)
+    //set webappURL param if desired
+    setUrl(webAppURL: string)
     {
-      this.url=url;
+      this.paramURL=webAppURL;
     }
 
 }
