@@ -1,33 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Http, HttpModule } from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+//import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class TestService
 {
     constructor(private http: Http){}
-    private apiURL="/TG_Servlet";
+    private apiURL="http://localhost:8080/TG_pro/ty.do";
+   // private apiURL = 'https://jsonplaceholder.typicode.com/posts';
     private paramURL="https://dev.assignforce.revaturelabs.com/home";
-    data: any;
-  /*getTestResults method takes url as param, 
-  passes it to $http.getmethod and maps response back as json object*/
-    getTestResults()
+    httpdata: any;
+
+//    getTestResults()
+//    {
+//      return this.http.get(this.apiURL)
+//      .toPromise()
+//      .then(response => response.json())
+//    }
+
+  getTestResults()
+  {
+  return this.http.get(this.apiURL)
+    .map((response) => response.json()).subscribe(data => {
+     this.getData(data);// console.log(data);
+    });
+  }
+
+    getData(data)
     {
-      this.data = this.http.get(this.apiURL).
-      map(
-        (response) => response.json()
-      );
+    this.httpdata = data;
+      return this.httpdata;
     }
 
-    //set webappURL param if desired
-    setParamURL(webAppURL: string)
-    {
-      this.paramURL=webAppURL;
-    }
-
-    getData()
-    {
-      return this.data;
-    }
 
 }
