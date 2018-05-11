@@ -10,7 +10,7 @@ import { TestService } from './test.service';
 export class AppComponent {
   title = 'Test Automation';
   webAppURL ='https://dev.assignforce.revaturelabs.com/home';
-  testResult: string;
+  testResult:any;
   constructor(private testService: TestService){}
 
   setWebAppURL(paramURL: string)
@@ -21,17 +21,15 @@ export class AppComponent {
 
   getResult()
   {
-     this.testService.getTestResults();
-    this.gettestresult();
-    //console.log(this.testResult);
+    this.testService.getTestResults().subscribe(data=>{
+   this.testResult = data;
+   console.log(this.testResult);
+   });
+  
   }
 
   
   
-  gettestresult()
-  {
-    this.testResult = this.testService.httpdata;
-    console.log(this.testResult);
-}
+
 
 }
