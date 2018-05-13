@@ -22,16 +22,16 @@ export class AppComponent {
   getResult()
   {
      this.testService.getTestResults();
-    this.gettestresult();
+    //this.gettestresult();
     //console.log(this.testResult);
   }
 
   
-  
+  /*
   gettestresult()
   {
     this.testResult = this.testService.httpdata;
     console.log(this.testResult);
-}
+}*/
 
 }

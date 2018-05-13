@@ -21,10 +21,13 @@ export class TestService
 
   getTestResults()
   {
-  return this.http.get(this.apiURL)
+     this.http.get(this.apiURL)
     .map((response) => response.json()).subscribe(data => {
      this.getData(data);// console.log(data);
+     // window.location.replace("/TG_pro/test-output/emailable-report.html");
+      window.location.href='/TG_pro/test-output/emailable-report.html';
     });
+
   }
 
     getData(data)
