@@ -7,8 +7,7 @@ import 'rxjs/add/operator/map';
 export class TestService
 {
     constructor(private http: Http){}
-   // private apiURL="http://localhost:8080/TG_pro/ty.do";
-    private apiURL = 'https://jsonplaceholder.typicode.com/posts';
+    private apiURL="http://localhost:8080/TG_pro/ty.do";
    // private apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
     private paramURL="https://dev.assignforce.revaturelabs.com/home";
     httpdata: any;

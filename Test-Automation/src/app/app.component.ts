@@ -21,7 +21,6 @@ export class AppComponent {
 
   getResult()
   {
-<<<<<<< HEAD
      this.testService.getTestResults();
     //this.gettestresult();
     //console.log(this.testResult);
@@ -34,17 +33,5 @@ export class AppComponent {
     this.testResult = this.testService.httpdata;
     console.log(this.testResult);
 }*/
-=======
-    this.testService.getTestResults().subscribe(data=>{
-   this.testResult = data;
-   console.log(this.testResult);
-   });
-  
-  }
-
-  
-  
-
->>>>>>> 6645b4f941b4798520834613dfbea0f370d6e3c9
 
 }
