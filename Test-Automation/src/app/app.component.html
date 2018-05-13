@@ -7,10 +7,11 @@
   <button type="button" (click)= "getResult()" >Test</button>
 
  <div>
-<!--iterate through json object
-<li *ngFor="let t of testResult">
- <span> <b>{{t.userId}}</b> </span>
-  <span><b>t.result</b></span>
-</li>  --> 
-{{testResult}} 
+<!--iterate through json object-->
+ <li *ngFor="let t of testResult">
+ <span> <b>{{t.TestDescription}}</b> </span>
+  <span><b>{{t.Testname}}</b></span>
+  <span><b>{{t.TestResult}}</b></span>
+</li>   
+<!-- {{testResult}} --> 
 </div> 
